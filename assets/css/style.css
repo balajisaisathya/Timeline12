@@ -1,0 +1,642 @@
+/*--------------
+  Global
+---------------*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+}
+
+/*--------------
+  TimeLine CSS
+  The Code regarding the Timeline is not mine.
+  This Timeline was designed by Samet Erpik
+  Source: https://codepen.io/samerpik/pen/OVKyVZ 
+  However, I have made some modifications to it for my portfolio.
+---------------*/
+
+/* Samet Erpik's Timeline code */
+
+/* Base */
+
+#timeline-content {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.timeline-outer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Timeline */
+
+.timeline {
+  border-left: 8px solid #000;
+  /* #000 is the timeline colour */
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(210, 190, 190, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #333;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  padding: 20px;
+  list-style: none;
+  text-align: left;
+}
+
+.timeline h1,
+.timeline h2,
+.timeline h3 {
+  font-size: 1.4em;
+}
+
+.timeline .event {
+  border-bottom: 1px solid rgb(160, 160, 160, 0.63);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline .event:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.timeline .event::before,
+.timeline .event::after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline .event::before {
+  left: -177.5px;
+  color: #000;
+  /* date colour */
+  content: attr(data-date);
+  text-align: right;
+  font-size: 14px;
+  min-width: 120px;
+}
+
+.timeline .event::after {
+  box-shadow: 0 0 0 8px #000;
+  /* #000 is the timeline colour */
+  left: -30px;
+  background: #fff;
+  /* inner circle colour */
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+  top: 5px;
+}
+
+/*--------------
+Responsive Stuff
+---------------*/
+
+@media (max-width: 1100px) {
+
+  .timeline .event::before {
+    left: 0.5px;
+    top: 20px;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .timeline h3 {
+    font-size: 16px;
+  }
+
+  .timeline p {
+    padding-top: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .timeline .event::before {
+    left: 0.5px;
+    top: 20px;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .timeline h3 {
+    font-size: 16px;
+  }
+
+  .timeline p {
+    padding-top: 20px;
+  }
+
+}
+
+/*--------------
+  End of Samet Erpik's Timeline code
+  ---------------*/
+
+/* =============================================== The Beginning of My Code =============================================== */
+
+/* headings and logo */
+
+h1 {
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  letter-spacing: 4px;
+  color: #252525;
+  font-family: Roboto, sans-serif;
+}
+
+.logo-menu-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 1em; 
+}
+
+.logo {
+  font-family: Oswald, sans-serif;
+  font-size: 160%;
+}
+
+.logo a {
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Menu - Navigation Bar */
+
+.menu ul {
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #666;
+}
+
+.menu li {
+  float: left;
+  list-style-type: none;
+  padding: 0 40px;
+  /* Add a brown right border to all list items, except the last item (last-child) */
+  border-right: 1px solid #dd3300;
+}
+
+.menu li:last-child {
+  border-right: none;
+}
+
+.menu a {
+  display: block;
+  padding: 8px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.5px;
+  text-decoration: none;
+}
+
+/* Show which menu option is active */
+
+.active {
+  background-color: #dd3300;
+}
+
+/* Hero image and cover text */
+
+.hero-outer{
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 4em;
+}
+
+.hero-image{
+  height: 400px;
+  width: 100%;
+  background: url("../images/essex_street_chapel.png") no-repeat center center;
+  background-size: cover;
+}
+
+.cover-text {
+  font-family: Oswald, sans-serif;
+  font-size: 80%;
+  text-transform: uppercase;
+  background-color: rgb(221, 51, 0, .65); /* #dd3300 */
+  position: absolute;  
+  bottom: 160px;
+  left: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.cover-text h2 {
+  color: #fff;
+}
+
+.prologue {
+  margin: 2em auto;
+  max-width: 80%;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  border: solid 2px #dd3300;
+}
+
+.prologue span::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+.row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-bottom: 20px;
+}
+
+/* Timeline's text and image flexbox */
+
+.flex-display {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.flex-display p {
+  /* Make space for the images */
+  flex-shrink: 5;
+  margin-top: 1em;
+}
+
+/* Added line breaks as described in 
+   https://www.designcise.com/web/tutorial/how-to-add-a-line-break-to-an-html-element-using-css-only 
+*/
+
+.flex-display span::before {
+  content: "\A";
+  white-space: pre;
+}
+
+/* Style all the links of the historical entries so that they have a uniform look */
+/* No line and blue colour */
+
+.flex-display a {
+  text-decoration: none;
+}
+
+.flex-display a:link {
+  color: #0000ff;
+}
+
+.flex-display a:visited {
+  color: #0000ff;
+}
+
+/* The images */
+
+.image-container {
+  max-width: 200px;
+  max-height: 360px;
+  overflow: hidden
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.block-display {
+  display: block;
+}
+
+/* Floating Back-To-Top Button
+   Based on JakeFromSF's design from 
+   https://stackoverflow.com/questions/32102747/how-to-make-a-back-to-top-button-using-css-and-html-only 
+*/
+
+#back-to-top {
+  color: #fff;
+  position: fixed;
+  bottom: 10px;
+  float: right;
+  left: 93.25%;
+  max-width: 30px;
+  width: 100%;
+  font-size: 10px;
+  border-radius: 4px;
+  border-color: rgba(85, 85, 85, 0.2);
+  background-color: rgb(100,100,100);
+  padding: 5px 4px;
+  text-decoration: none;
+}
+
+/*On Hover Color Change*/
+
+  #back-to-top:hover {
+    background-color: #3a3a3a;
+}
+
+/* footer */
+
+footer {
+  height: 150px;
+}
+
+.social-networks {
+  text-align: center;
+}
+
+.social-networks > li {
+  display: inline;
+}
+
+.social-networks i {
+  font-size: 160%;
+  margin: 1%;
+  padding: 5%;
+}
+
+.social-networks a {
+  color: inherit;
+}
+
+/* gallery */
+
+/* Background colour of the Gallery Page */
+
+.grey-background {
+  background-color: #e7e9eb;
+}
+
+.gallery-text {
+  margin: 3em auto;
+  max-width: 45%;
+  font-size: 20px;
+  color: #000;
+  padding: 20px;
+  border-radius: 15px;
+  border: solid 2px #dd3300;
+}
+
+.gallery-photos {
+  clear: both;
+  line-height: 0;
+  column-count: 3;
+  column-gap: 0;
+}
+
+.gallery-photos > img {
+  width: 100%;
+}
+
+/* Contact Us Form */
+
+.form-section {
+  clear: left;
+  margin-top: 4em;
+  padding: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-input {
+  width: 200px;
+  height: 25px;
+  border: 1px solid #fafafa;
+  border-radius: 2px;
+}
+
+.text-input:hover {
+  border-color: #dd3300;
+}
+
+textarea {
+  width: 200px;
+  height: 100px;
+}
+  
+.submit-button {
+  border-radius: 2em;
+  padding: 10px;
+  text-align: center;
+  font-size: 100%;
+  background-color: #dd3300;
+  color: #fafafa;
+  display: block;
+  margin: 0 auto;
+}
+
+.submit-button:hover,
+.submit-button:active {
+  background-color: #fafafa;
+  color: #521300;
+}
+
+/* Thank You message */
+.thank-you-container {
+  text-align: center;
+  background-color: #dd3300;
+  color: #fff; 
+  border-radius: 2em;
+  width: 40%;
+  margin: 5em auto;
+  padding: 1em 2em;
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+@media (max-width: 1100px) {
+
+  /* headings and logo */
+
+  .logo h1 {
+    letter-spacing: normal;
+    font-size: 110%;
+  }
+
+  /* Menu - Navigation Bar */
+
+  .menu {
+    text-align: center;
+  }
+
+  /* navigation links */
+
+  .menu li {
+    padding: 0 5px;
+  }
+  
+  .menu a {
+      font-size: 20px;
+  }
+
+  /* Hero image's cover text */
+
+  .cover-text {
+    left: 40%;
+  }
+
+  /* Images */
+
+  /* Revert Image CSS style */
+  .image-container {
+    all: revert;
+  }
+
+  /* resize the container and centre the image */
+  /* https://stackoverflow.com/questions/19026884/flexbox-center-horizontally-and-vertically#33049198 */
+
+  .image-container {
+    max-width: 200px;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /* Hero image and cover text */
+
+  .cover-text {
+    top: 10px;
+    left: 30%;
+    height: 140px;
+  }
+
+  /* Timeline's text and image flexbox */
+
+  .flex-display {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Images */
+
+  /* Revert CSS style */
+  .image-container,
+  .image-container * {
+    all: revert;
+  }
+
+  /* Use the full width of the screen for mobiles */
+  /* Also ensure that you display images from the 'top' so that images are not decapitated! */
+  .image-container img {
+    max-width: 100%;
+    max-height: 300px;
+    object-position: top;
+    object-fit: contain;
+  }
+
+  /* Show two columns of places of worship on the Gallery page */
+  .gallery-photos {
+    column-count: 2;
+  }
+  
+}
+
+@media (max-width: 600px) {
+
+  /* headings and logo */
+
+  .logo {
+    letter-spacing: normal;
+    font-size: 100%;
+  }
+
+  /* Menu - Navigation Bar */
+
+  /* navigation links */
+  
+  .menu li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Change the link color to #e7e9eb; on hover */
+  .menu li a:hover {
+    background-color: #e7e9eb;
+  }
+
+  .menu a {
+    line-height: normal;
+    font-size: 10px;
+    padding: 0 8px;
+  }
+    
+}
+
+@media (max-width: 480px) {
+
+  /* Ensure that long titles display correctly on mobile screens by shrinking the font size */
+  .timeline h3 {
+    font-size: 11px;
+  }
+  
+  /* Hero image's cover text */
+
+  .cover-text {
+    font-size: 75%;
+    width: 250px;
+    height: 140px;
+    padding: 0;
+    left: 10%;
+  }
+
+  /* Show a single column of places of worship on the Gallery page */
+  .gallery-photos {
+    column-count: 1;
+  }
+
+  /* Floating Back-To-Top Button */
+
+  #back-to-top {
+    left: 91.25%;
+    padding: 0;
+    font-size: 12px;
+  }    
+
+}
+
+/* Added this media query regarding menus
+   because https://ui.dev/amiresponsive tests mobiles uses 320x480px for mobiles
+   So need to ensure that the navigation bar looks OK
+*/
+
+
+@media (max-width: 320px) {
+  .menu a {
+    padding: 0 6px;
+  }
+}  
